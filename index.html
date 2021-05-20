@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //this calculates values automatically 
+            sum();
+            $("#num1, #num2").on("keydown keyup", function () {
+                sum();
+            });
+        });
+
+        function sum() {
+            var num1 = document.getElementById('num1').value;
+            var num2 = document.getElementById('num2').value;
+            var result = parseInt(num1) + parseInt(num2);
+            var result1 = parseInt(num2) - parseInt(num1);
+            var result3 = parseInt(num1) / parseInt(num2);
+            var result4 = parseInt(num2) * parseInt(num1);
+            var result5 = (parseInt(num2) * parseInt(num1)) / 3 + parseInt(num2) - parseInt(num1);;
+            if (!isNaN(result)) {
+                document.getElementById('sum').value = result;
+                document.getElementById('subt').value = result1;
+                document.getElementById('divi').value = result3;
+                document.getElementById('mul').value = result4;
+                document.getElementById('mulr').value = result5;
+            }
+        }
+    </script>
+    <script>
+        // onclick p hide
+        $(document).ready(function () {
+            $("p").click(function () {
+                // $(this).hide();
+
+                // hide all p 
+                //  $("p").hide();
+
+                // hide p using id
+                // $("#test").hide();
+
+                // hide p using class
+                //  $(".test").hide();
+            });
+        });
+    </script>
+    <script>
+        // When a user clicks on a button, the element with id="test" will be hidden: 
+        $(document).ready(function () {
+            $("button").click(function () {
+                // $("#test1").hide();
+            });
+        });
+    </script>
+    <script>
+        // select all p element with class intro 
+        $(document).ready(function () {
+            $("p.intro").click(function () {
+                //hide all p element with class intro 
+                // $("p.intro").hide();
+            });
+        });
+    </script>
+    <script>
+        // select first p element 
+        $(document).ready(function () {
+            $("button.hide_first_p").click(function () {
+                //hide first p element 
+                // $("p:first").hide();
+            });
+        });
+    </script>
+    <script>
+        // select first ul li element 
+        $(document).ready(function () {
+            $("button.ul_li_hide").click(function () {
+                //hide first ul li element 
+                $("ul li:first").hide();
+
+                // or same
+                //hide first ul li element 
+                //  $("ul li:first-child").hide();
+            });
+        });
+    </script>
+    <script>
+        // select href element 
+        $(document).ready(function () {
+            $("button.href_hide").click(function () {
+                //hide href element 
+                $("[href]").hide();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("button.href_hide_target_attribute").click(function () {
+                // hide all <a> elements with a target attribute value equal to "_blank"
+                // $("a[target='_blank']").hide();
+
+
+                // hide all <a> elements with a target attribute value noot equal to "_blank"
+                $("a[target!='_blank']").hide();
+            });
+        });
+    </script>
+    <script>
+        // hide all <button> elements and <input> elements of type="button"
+        $(document).ready(function(){
+          $("button").click(function(){
+            $(":button").hide();
+          });
+        });
+        </script>
+        <script>
+            // Selects all even <tr> elements
+            $(document).ready(function(){
+                 // Selects all even <tr> elements
+              $("tr:even").css("background-color", "yellow");
+               // Selects all even <tr> elements
+              $("tr:odd").css("background-color", "red");
+            });
+            </script>
+</head>
+
+
+<body>
+
+
+    <table>
+        <tr>
+            <td>Num 1:</td>
+            <td><input type="text" name="num1" id="num1" /></td>
+        </tr>
+        <tr>
+            <td>Num 2:</td>
+            <td><input type="text" name="num2" id="num2" /></td>
+        </tr>
+        <tr>
+            <td>Sum:</td>
+            <td><input type="text" name="sum" id="sum" readonly /></td>
+        </tr>
+        <tr>
+            <td>Subtract:</td>
+            <td><input type="text" name="subt" id="subt" readonly /></td>
+        </tr>
+        <tr>
+            <td>divi:</td>
+            <td><input type="text" name="divi" id="divi" readonly /></td>
+        </tr>
+        <tr>
+            <td>mul:</td>
+            <td><input type="text" name="mul" id="mul" readonly /></td>
+        </tr>
+        <tr>
+            <td>mul:</td>
+            <td><input type="text" name="mulr" id="mulr" readonly /></td>
+        </tr>
+    </table>
+
+    <!-- hide p -->
+    <p>If you click on me, I will disappear.</p>
+    <!-- hide p using id -->
+    <p id="test">hide p using id</p>
+    <!-- hide p using class -->
+    <p class="test">hide p using class</p>
+
+    <!-- When a user clicks on a button, the element with id="test" will be hidden: -->
+    <p id="test1">When a user clicks on a button, the element with id="test" will be hidden: </p>
+    <button>Click me</button>
+
+
+    <p>Click me too!</p>
+
+    <!-- hide all p element with class intro -->
+    <p class="intro">select all p element with class intro 1</p>
+    <p class="intro">select all p element with class intro 2</p>
+    <p class="intro">select all p element with class intro 3</p>
+
+    <!-- hide first p element with class hide_first_p -->
+    <button class="hide_first_p">Click me to hide first p intro</button>
+    <hr>
+    <!-- hide first ul li element -->
+    <ul>
+        <li>Coffee</li>
+        <li>Milk</li>
+        <li>Tea</li>
+    </ul>
+
+    <p>List 2:</p>
+    <ul>
+        <li>Coffee</li>
+        <li>Milk</li>
+        <li>Tea</li>
+    </ul>
+
+    <button class="ul_li_hide">Click me</button>
+    <hr>
+    <!-- hide first href element -->
+    <p><a href="https://www.w3schools.com/html/">HTML Tutorial</a></p>
+    <p><a href="https://www.w3schools.com/css/">CSS Tutorial</a></p>
+    <button class="href_hide">Click me</button>
+    <hr>
+
+    <!-- hide all <a> elements with a target attribute value equal to "_blank" -->
+        <p><a href="https://www.w3schools.com/html/" target="_blank">HTML Tutorial</a></p>
+        <p><a href="https://www.w3schools.com/css/">CSS Tutorial</a></p>
+        <button class="href_hide_target_attribute">Click me</button>
+</body>
+
+</html>

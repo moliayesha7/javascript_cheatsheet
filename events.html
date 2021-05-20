@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // hide p when double click
+        $(document).ready(function () {
+            $("p.double_click").dblclick(function () {
+                $(this).hide();
+            });
+        });
+    </script>
+    <script>
+        // mouseenter function is executed when the mouse pointer enters the HTML element:
+        $(document).ready(function () {
+            $("#p1").mouseenter(function () {
+                alert("You entered p1!");
+            });
+        });
+    </script>
+    <script>
+          // mouseleave function is executed when the mouse  pointer leaves the HTML element:
+        $(document).ready(function () {
+            $("#p1").mouseleave(function () {
+                alert("Bye! You now leave p1!");
+            });
+        });
+    </script>
+    <script>
+        // mousedown function is executed, when the left, middle or right mouse button is pressed down, while the mouse is over the HTML element:
+        $(document).ready(function () {
+            $("#mousedown").mousedown(function () {
+                alert("Mouse down over mousedown!");
+            });
+        });
+    </script>
+     <script>
+        // mouseup function is executed, when the left, middle or right mouse button is released, while the mouse is over the HTML element:
+        $(document).ready(function () {
+            $("#mouseup").mouseup(function () {
+                alert("Mouseup over mouseup!");
+            });
+        });
+    </script>
+    <script>
+        // hover function
+        $(document).ready(function () {
+            $("#hover").hover(function () {
+                // alert("You entered p1!");
+            },
+                function () {
+                    // alert("Bye! You now leave p1!");
+                });
+        });
+    </script>
+    <script>
+        // focus is executed when the form field gets focus and blur function is executed when the form field loses focus
+        $(document).ready(function () {
+            $("input").focus(function () {
+                $(this).css("background-color", "yellow");
+            });
+            $("input").blur(function () {
+                $(this).css("background-color", "green");
+            });
+        });
+    </script>
+    <script>
+        // on click function
+        $(document).ready(function () {
+            $("p").on("click", function () {
+                $(this).hide();
+            });
+        });
+    </script>
+    <script>
+        // Attach multiple event handlers to a <p> element:
+        $(document).ready(function () {
+            $("p.multiple_event").on({
+                mouseenter: function () {
+                    $(this).css("background-color", "lightgray");
+                },
+                mouseleave: function () {
+                    $(this).css("background-color", "lightblue");
+                },
+                click: function () {
+                    $(this).css("background-color", "yellow");
+                }
+            });
+        });
+    </script>
+    <script>
+        //  How to hide parts of text.
+        $(document).ready(function () {
+            $(".ex .hidee").click(function () {
+                $(this).parents(".ex").hide("");
+            });
+        });
+    </script>
+    <style>
+        div.ex {
+            background-color: #e5eecc;
+            padding: 7px;
+            border: solid 1px #c3c3c3;
+        }
+    </style>
+    
+    <script>
+        //  hide and show HTML elements with the hide() and show() methods
+        $(document).ready(function () {
+            $("#hide").click(function () {
+                $("p.hide_show").hide();
+            });
+            $("#show").click(function () {
+                $("p.hide_show").show();
+            });
+        });
+    </script>
+
+</head>
+
+
+<body>
+
+
+    <table>
+        <tr>
+            <td>Num 1:</td>
+            <td><input type="text" name="num1" id="num1" /></td>
+        </tr>
+        <tr>
+            <td>Num 2:</td>
+            <td><input type="text" name="num2" id="num2" /></td>
+        </tr>
+        <tr>
+            <td>Sum:</td>
+            <td><input type="text" name="sum" id="sum" readonly /></td>
+        </tr>
+        <tr>
+            <td>Subtract:</td>
+            <td><input type="text" name="subt" id="subt" readonly /></td>
+        </tr>
+        <tr>
+            <td>divi:</td>
+            <td><input type="text" name="divi" id="divi" readonly /></td>
+        </tr>
+        <tr>
+            <td>mul:</td>
+            <td><input type="text" name="mul" id="mul" readonly /></td>
+        </tr>
+        <tr>
+            <td>mul:</td>
+            <td><input type="text" name="mulr" id="mulr" readonly /></td>
+        </tr>
+    </table>
+
+    <!-- hide p when double click-->
+    <p class="double_click">If you click on me, I will disappear.</p>
+    <hr>
+    <!-- mousedown event -->
+    <p id="mousedown">mousedown event</p>
+
+    <!-- mouseup event -->
+    <p id="mouseup">mouseup event</p>
+
+    <!-- mouse hover -->
+    <p id="hover">
+        The hover() method takes two functions and is a combination of the mouseenter() and mouseleave() methods.
+The first function is executed when the mouse enters the HTML element, and the second function is executed when the mouse leaves the HTML element
+    </p>
+
+
+    <!-- focus is executed when the form field gets focus and blur function is executed when the form field loses focus -->
+    Name: <input type="text" name="fullname"><br>
+    Email: <input type="text" name="email">
+
+
+
+    <!-- Attach multiple event handlers to a <p> element: -->
+    <p class="multiple_event">Attach multiple event handlers</p>
+    <hr>
+
+    <!-- How to hide parts of text. -->
+    <h3>Island Trading</h3>
+    
+    <div class="ex">
+        <button class="hidee">Hide me</button>
+        <p>Contact: Helen Bennett<br>
+            Garden House Crowther Way<br>
+            London</p>
+    </div>
+    
+    <h3>Paris Specialities</h3>
+    
+    <div class="ex">
+        <button class="hidee">Hide me</button>
+        <p>Contact: Marie Bertrand<br>
+            265, Boulevard Charonne<br>
+            Paris</p>
+    </div>
+    <hr>
+    <!-- hide and show -->
+    <p class="hide_show">If you click on the "Hide" button, I will disappear.</p>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <hr>
+    
+    <!-- When a user clicks on a button, the element with id="test" will be hidden: -->
+    <p id="test1">When a user clicks on a button, the element with id="test" will be hidden: </p>
+    <button>Click me</button>
+
+    <!-- mouseleave function is executed when the mouse  pointer leaves the HTML element & 
+   mouseenter function is executed when the mouse pointer enters the HTML element
+    -->
+    <p id="p1">Click me too!</p>
+
+    <!-- hide all p element with class intro -->
+    <p class="intro">select all p element with class intro 1</p>
+    <p class="intro">select all p element with class intro 2</p>
+    <p class="intro">select all p element with class intro 3</p>
+
+    <!-- hide first p element with class hide_first_p -->
+    <button class="hide_first_p">Click me to hide first p intro</button>
+    <hr>
+    <!-- hide first ul li element -->
+    <ul>
+        <li>Coffee</li>
+        <li>Milk</li>
+        <li>Tea</li>
+    </ul>
+
+    <p>List 2:</p>
+    <ul>
+        <li>Coffee</li>
+        <li>Milk</li>
+        <li>Tea</li>
+    </ul>
+
+    <button class="ul_li_hide">Click me</button>
+    <hr>
+    <!-- hide first href element -->
+    <p><a href="https://www.w3schools.com/html/">HTML Tutorial</a></p>
+    <p><a href="https://www.w3schools.com/css/">CSS Tutorial</a></p>
+    <button class="href_hide">Click me</button>
+    <hr>
+
+    <!-- hide all <a> elements with a target attribute value equal to "_blank" -->
+    <p><a href="https://www.w3schools.com/html/" target="_blank">HTML Tutorial</a></p>
+    <p><a href="https://www.w3schools.com/css/">CSS Tutorial</a></p>
+    <button class="href_hide_target_attribute">Click me</button>
+</body>
+
+</html>
