@@ -2,93 +2,7 @@
 <html>
 
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        // hide p when double click
-        $(document).ready(function () {
-            $("p.double_click").dblclick(function () {
-                $(this).hide();
-            });
-        });
-    </script>
-    <script>
-        // mouseenter function is executed when the mouse pointer enters the HTML element:
-        $(document).ready(function () {
-            $("#p1").mouseenter(function () {
-                // alert("You entered p1!");
-            });
-        });
-    </script>
-    <script>
-          // mouseleave function is executed when the mouse  pointer leaves the HTML element:
-        $(document).ready(function () {
-            $("#p1").mouseleave(function () {
-                // alert("Bye! You now leave p1!");
-            });
-        });
-    </script>
-    <script>
-        // mousedown function is executed, when the left, middle or right mouse button is pressed down, while the mouse is over the HTML element:
-        $(document).ready(function () {
-            $("#mousedown").mousedown(function () {
-                // alert("Mouse down over mousedown!");
-            });
-        });
-    </script>
-     <script>
-        // mouseup function is executed, when the left, middle or right mouse button is released, while the mouse is over the HTML element:
-        $(document).ready(function () {
-            $("#mouseup").mouseup(function () {
-                // alert("Mouseup over mouseup!");
-            });
-        });
-    </script>
-    <script>
-        // hover function
-        $(document).ready(function () {
-            $("#hover").hover(function () {
-                // alert("You entered p1!");
-            },
-                function () {
-                    // alert("Bye! You now leave p1!");
-                });
-        });
-    </script>
-    <script>
-        // focus is executed when the form field gets focus and blur function is executed when the form field loses focus
-        $(document).ready(function () {
-            $("input").focus(function () {
-                $(this).css("background-color", "yellow");
-            });
-            $("input").blur(function () {
-                $(this).css("background-color", "green");
-            });
-        });
-    </script>
-    <script>
-        // on click function
-        $(document).ready(function () {
-            $("p").on("click", function () {
-                $(this).hide();
-            });
-        });
-    </script>
-    <script>
-        // Attach multiple event handlers to a <p> element:
-        $(document).ready(function () {
-            $("p.multiple_event").on({
-                mouseenter: function () {
-                    $(this).css("background-color", "lightgray");
-                },
-                mouseleave: function () {
-                    $(this).css("background-color", "lightblue");
-                },
-                click: function () {
-                    $(this).css("background-color", "yellow");
-                }
-            });
-        });
-    </script>
+    
     <script>
         //  How to hide parts of text.
         $(document).ready(function () {
@@ -124,43 +38,27 @@
             });
         });
     </script>
+   <script>
+    $(document).ready(function(){
+      $("button").click(function(){
+        $("#div1").fadeIn();
+        $("#div2").fadeIn("slow");
+        $("#div3").fadeIn(3000);
+      });
+    });
+    </script>
 </head>
 
 
 <body>
 
+    <p>Demonstrate fadeIn() with different parameters.</p>
 
-    <table>
-        <tr>
-            <td>Num 1:</td>
-            <td><input type="text" name="num1" id="num1" /></td>
-        </tr>
-        <tr>
-            <td>Num 2:</td>
-            <td><input type="text" name="num2" id="num2" /></td>
-        </tr>
-        <tr>
-            <td>Sum:</td>
-            <td><input type="text" name="sum" id="sum" readonly /></td>
-        </tr>
-        <tr>
-            <td>Subtract:</td>
-            <td><input type="text" name="subt" id="subt" readonly /></td>
-        </tr>
-        <tr>
-            <td>divi:</td>
-            <td><input type="text" name="divi" id="divi" readonly /></td>
-        </tr>
-        <tr>
-            <td>mul:</td>
-            <td><input type="text" name="mul" id="mul" readonly /></td>
-        </tr>
-        <tr>
-            <td>mul:</td>
-            <td><input type="text" name="mulr" id="mulr" readonly /></td>
-        </tr>
-    </table>
-
+    <button>Click to fade in boxes</button><br><br>
+    
+    <div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+    <div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+    <div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
     <!-- hide p when double click-->
     <p class="double_click">If you click on me, I will disappear.</p>
     <hr>
